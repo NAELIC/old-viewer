@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { act } from '@testing-library/react';
+import { RootState } from '../store';
 
 interface BallState {
     position: {
@@ -11,7 +13,7 @@ const initialState: BallState = {
     position: {
         x: 0,
         y: 0
-    }
+    },
 };
 
 export const BallSlice = createSlice({
@@ -26,5 +28,7 @@ export const BallSlice = createSlice({
 })
 
 export const { update } = BallSlice.actions;
+
+export const ballPosition = (state: RootState) => state.ball.position;
 
 export default BallSlice.reducer;
