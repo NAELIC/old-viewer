@@ -1,15 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import BallReducer from './data/ball';
-import FieldReducer from './data/field';
-import RobotsReducer from './data/robot';
+import DataReducer from './data';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    ball: BallReducer,
-    field: FieldReducer,
-    robots: RobotsReducer,
+    data: DataReducer,
   },
 });
 
