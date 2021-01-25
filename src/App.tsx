@@ -1,5 +1,5 @@
 import React from "react";
-import { DataMessage } from "@nodetron/types/data";
+import { WorldMessage } from "@nodetron/types/world";
 import "./App.css";
 import { ViewerField } from "./features/viewerField/viewerField";
 
@@ -14,7 +14,7 @@ class App extends React.Component {
     };
 
     this.ws.onmessage = (evt) => {
-      const message: DataMessage = JSON.parse(evt.data);
+      const message: WorldMessage = JSON.parse(evt.data);
       messageHandler(message);
     };
 

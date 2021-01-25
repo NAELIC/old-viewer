@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectData } from "../../app/data";
 import Field from "@bit/naelic.viewer.field"
-import { Color } from "@nodetron/types/utils/utils";
+import { Color } from "@nodetron/types/enum";
 
 export function ViewerField() {
   const data = useSelector(selectData)

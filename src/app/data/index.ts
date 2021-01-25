@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-import { DataMessage } from '@nodetron/types/data'
-import { Color } from '@nodetron/types/utils/utils';
+import { WorldMessage } from '@nodetron/types/world'
+import { Color } from '@nodetron/types/enum';
 
-const initialState: DataMessage = {
+const initialState: WorldMessage = {
     field: {
         width: 6,
         length: 9,
@@ -37,7 +37,7 @@ export const DataSlice = createSlice({
     name: 'ball',
     initialState,
     reducers: {
-        update: (state, action: PayloadAction<DataMessage>) => {
+        update: (state, action: PayloadAction<WorldMessage>) => {
             state.field = action.payload.field
             state.ball = action.payload.ball
             state.robots = action.payload.robots
